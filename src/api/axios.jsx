@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // Array of backend server URLs
 const bURL = [
-    'http://192.168.1.100:7020',
+    'http://localhost:7020/',
     // 'http://122.52.134.146:7002',
     // 'http://122.52.134.146:7003',
     // 'http://122.52.134.146:7004',
