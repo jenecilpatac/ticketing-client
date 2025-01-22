@@ -6,4 +6,4 @@ services:
     container_name: ticketing-netsuite
     restart: unless-stopped
     ports:
-      - "7000:7000"
+      - "7030:7030"

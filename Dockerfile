@@ -1,17 +1,20 @@
-# Use an official Node.js image to install serve
-FROM node:18-alpine
+# Use the Node.js image
+FROM node:18
 
-# Set the working directory in the container
+# Set working directory
 WORKDIR /app
 
-# Install 'serve' globally
-RUN npm install -g serve
+# Copy package.json and package-lock.json (if present) to leverage Docker cache
+COPY package.json package-lock.json ./
 
-# Copy the build output (dist folder) into the container
-COPY ./dist /app/dist
+# Install dependencies using npm
+RUN npm install
 
-# Expose port 7000 for serve
-EXPOSE 7000
+# Copy the entire app code
+COPY . .
 
-# Run the serve command to serve the static files from the dist folder
-CMD ["serve", "-s", "dist", "-l", "7000"]
+# Expose the port for the application
+EXPOSE 7030
+
+# Start the application
+CMD ["npm", "run", "preview"]
