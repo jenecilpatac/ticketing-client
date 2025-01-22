@@ -5,7 +5,7 @@ import path from "path"; // Import path
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 7000,
+    port: 7030,
     host: "0.0.0.0",
     hmr: {
       overlay: false, // Disable HMR overlay
